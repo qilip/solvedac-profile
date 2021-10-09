@@ -1,0 +1,11 @@
+{
+  "functions": {
+    "api/**": {
+      "memory": 1024
+    }
+  },
+  "rewrites": [
+    { "source": "/p/:handle", "destination": "/api/profile" },
+    { "source": "/:handle", "destination": "/api/page" }
+  ]
+}
