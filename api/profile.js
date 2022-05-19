@@ -5,11 +5,66 @@ export default async (req, res) => {
   try{
     const handle = req.query.handle;
     // const userData = await getUserData(handle);
-    const userData = {
-      handle: 'qilip',
-      tier: 31,
-      rating: 3000,
-    };
+    const temp = `
+    {
+      "handle": "qilip",
+      "bio": "PS 접음 ㅅㄱ",
+      "organizations": [
+        {
+          "organizationId": 328,
+          "name": "아주대학교",
+          "type": "university",
+          "rating": 2669,
+          "userCount": 325,
+          "voteCount": 828,
+          "solvedCount": 4429,
+          "color": "#000000"
+        },
+        {
+          "organizationId": 461,
+          "name": "군대",
+          "type": "community",
+          "rating": 2876,
+          "userCount": 165,
+          "voteCount": 3914,
+          "solvedCount": 7592,
+          "color": "#000000"
+        }
+      ],
+      "badge": {
+        "badgeId": "grass_05",
+        "badgeImageUrl": "https://static.solved.ac/profile_badge/grass_05.png",
+        "unlockedUserCount": 463,
+        "displayName": "새싹5단계",
+        "displayDescription": "32일 연속 문제 해결"
+      },
+      "background": {
+        "backgroundId": "grass_30",
+        "backgroundImageUrl": "https://static.solved.ac/profile_bg/grass_30/grass_30.png",
+        "author": "havana723",
+        "authorUrl": "",
+        "unlockedUserCount": 459,
+        "displayName": "30일의 성실함",
+        "displayDescription": "30일 연속으로 문제를 해결했다"
+      },
+      "profileImageUrl": "/qilip-picture_test.png",
+      "solvedCount": 453,
+      "voteCount": 38,
+      "class": 7,
+      "classDecoration": "none",
+      "tier": 21,
+      "rating": 2251,
+      "ratingByProblemsSum": 1798,
+      "ratingByClass": 220,
+      "ratingBySolvedCount": 157,
+      "ratingByVoteCount": 25,
+      "exp": 66033415,
+      "rivalCount": 17,
+      "reverseRivalCount": 6,
+      "maxStreak": 32,
+      "rank": 462
+    }`;
+    const userData = JSON.parse(temp);
     const html = getHtml(userData);
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
